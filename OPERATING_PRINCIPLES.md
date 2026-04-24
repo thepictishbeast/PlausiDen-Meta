@@ -59,6 +59,33 @@ Mechanism:
 
 Corollary: **if you haven't checked a doctrine repo in 30 days, assume something has changed.** `git fetch && cat CHANGELOG.toml` is a 5-second operation and should happen whenever a consumer maintainer resumes work on a doctrine-adopting project.
 
+## 13. No duplication. No redundancy. No over-specificity in contributions.
+
+Many independent Claude Code sessions, AI agents, and human contributors
+will work on PlausiDen repos over time without seeing each other's work.
+The default failure mode is **fragmentation**: two sessions independently
+write the same rule with slightly different wording, the same harness
+under two names, the same vocabulary field with two spellings.
+
+The discipline against fragmentation:
+
+1. **Search before adding.** Every contribution starts with a search of the relevant repo's existing artifacts. Adding a rule? Grep `audits/` and `templates/` first. Adding a harness? Search `templates/` first. Adding a vocabulary field? Read `doctrine/vocabulary.toml` end-to-end first.
+
+2. **Extend, don't fork.** If an existing artifact is 80% right, extend it (add a clause, add an allowlist entry, expand a taxonomy). Do not introduce a parallel artifact unless the existing one is structurally incompatible.
+
+3. **Generalize before committing.** Any pattern observed in one consumer that gets contributed up MUST first pass the independence test in [`SCOPE.md`](SCOPE.md): "if a stranger cloned this repo tomorrow and knew nothing about my project, would this make sense as a standalone artifact?" If no, generalize until yes, or scope it back into your own repo.
+
+4. **Reference, don't duplicate, doctrine clauses.** When writing a new rule that enforces an existing doctrine clause, reference the clause by id rather than restating it. Doctrine has one canonical source of each tenet; rules are the multiple enforcers of those tenets.
+
+5. **Cross-repo concerns route through PlausiDen-Meta.** When a contribution touches multiple doctrine repos (e.g., a rule that depends on a new vocabulary field in Obs and a new contract in Canon), file an issue in PlausiDen-Meta first to coordinate the cross-repo amendment before committing in any single repo.
+
+6. **Per-consumer specifics stay in the consumer's repo.** If your contribution only makes sense in the context of a specific consumer's project, the contribution belongs in that consumer's repo, not in any PlausiDen-namespace repo.
+
+Enforcement: see [`CONTRIBUTOR_CHECKLIST.md`](CONTRIBUTOR_CHECKLIST.md) for the
+workflow every contributor (human or AI agent) follows before opening a PR.
+
+---
+
 ## 12. Exceptions must be specific, scope-limited, and narrow
 
 When a consumer genuinely cannot meet a doctrine requirement, the answer is an **exception**, not a silent deviation. Exceptions are tracked artifacts with strict form.
