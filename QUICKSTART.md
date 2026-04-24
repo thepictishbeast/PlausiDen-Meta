@@ -103,6 +103,36 @@ not for experimental spikes.** If your project is:
 Keep it in an unlabeled scratch repo. Graduate to PlausiDen-namespace only
 when it's stable enough to obey doctrine.
 
+## Check for doctrine updates — regularly
+
+Doctrines evolve. Consumers that don't track updates drift into non-compliance without noticing.
+
+**Required minimum cadence**: check the doctrine repos you depend on **monthly**. More often during active work on a doctrine-adopting project.
+
+```sh
+# For every PlausiDen repo your project declares in integrations/avp.toml:
+for repo in PlausiDen-{Obs,Canon,Audits,Tests,AVP-Doctrine,Harvest,Meta}; do
+  echo "=== $repo ==="
+  git -C /path/to/"$repo" fetch origin && git -C /path/to/"$repo" log --oneline origin/main ^HEAD -- DOCTRINE.md doctrine/ CHANGELOG.toml
+done
+```
+
+If anything non-trivial has landed, review the amendments (in each repo's `doctrine/amendments/`), decide whether your consumer needs to adjust, and bump the `doctrine_version` you declare in your `integrations/avp.toml` once you're caught up.
+
+**CI enforcement**: `PlausiDen-Audits` (when its engine ships) checks the declared `doctrine_version` against `CHANGELOG.toml` on every audit run. Warn at 30 days behind; error at 90 days behind. See [`OPERATING_PRINCIPLES.md`](OPERATING_PRINCIPLES.md) §11.
+
+## If you can't comply with a specific rule
+
+File an **exception** per [`EXCEPTIONS.md`](EXCEPTIONS.md). Exceptions must be:
+
+- **Specific** — name the exact tenet, not the general doctrine.
+- **Scope-limited** — a single file / module / endpoint, not a codebase.
+- **Narrow** — the smallest deviation that addresses the problem.
+- **Time-bounded** — absolute expiry date, no open-ended exceptions.
+- **Linked** — issue tracker URL mandatory.
+
+If the exception doesn't fit on one page with all fields filled, it's too broad. If you find yourself arguing for one, also draft the corresponding doctrine amendment.
+
 ## Where to ask
 
 1. Open an issue in [`PlausiDen-Meta`](https://github.com/thepictishbeast/PlausiDen-Meta) for ecosystem-wide questions.

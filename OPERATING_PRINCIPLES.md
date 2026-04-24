@@ -45,3 +45,40 @@ The full design surface across all doctrine repos plus Canon plus the object-lev
 ## 10. Counter-mechanism: meta-layer additions require demonstrated object-level pain
 
 Every doctrine tenet, every harvest candidate type, every AVP tier must cite the **concrete failure it prevents** — preferably an incident that already happened. Speculative generality is the failure mode that turns infrastructure into a beautiful cathedral that competes with object-level consumer work for attention. **Citation requirement is enforced by the doctrine-amendment process** (see [`GOVERNANCE.md`](GOVERNANCE.md)).
+
+## 11. Doctrines are living; consumers check on a declared cadence
+
+No PlausiDen doctrine is frozen. They evolve via the amendment process (see [`GOVERNANCE.md`](GOVERNANCE.md)) as incidents, evidence, and harvest candidates accumulate. Consumers **must** track doctrine updates and cannot assume yesterday's doctrine still applies.
+
+Mechanism:
+
+- **Every doctrine repo publishes `CHANGELOG.toml` at its root.** Machine-readable; keyed by doctrine version; lists each amendment's id, summary, and affected tenets.
+- **Every consumer's CI pulls the `CHANGELOG.toml` on every audit run** and warns when the consumer's declared `doctrine_version` (in `integrations/avp.toml`) is behind the published version.
+- **Staleness escalation**: warn at 30 days behind; error at 90 days behind. Consumers that can't upgrade immediately must file an exception per [`EXCEPTIONS.md`](EXCEPTIONS.md).
+- **Cadence expectation**: doctrine amendments land on no fixed schedule (amendment is gated on evidence, not calendar). But consumers should **manually check doctrine repos at least monthly** even when CI is green, since amendment proposals sit in public-comment PRs for at least 7 days before merging and consumer feedback matters most before the amendment lands, not after.
+
+Corollary: **if you haven't checked a doctrine repo in 30 days, assume something has changed.** `git fetch && cat CHANGELOG.toml` is a 5-second operation and should happen whenever a consumer maintainer resumes work on a doctrine-adopting project.
+
+## 12. Exceptions must be specific, scope-limited, and narrow
+
+When a consumer genuinely cannot meet a doctrine requirement, the answer is an **exception**, not a silent deviation. Exceptions are tracked artifacts with strict form.
+
+**Required** for every exception:
+
+1. **Named tenet.** The exact principle or rule being excepted, by id. Not "the security doctrine" — "`plausiden-obs` doctrine tenet 4 (secret-type-refused), specifically the `Serialize` derivation path."
+2. **Scope.** File-path glob or module id. Not "our codebase" — "`src/legacy/fixture_gen.rs` only, lines 47–92."
+3. **Expiry.** Absolute date (ISO-8601). Not "TBD" — "2026-07-31." No open-ended exceptions.
+4. **Justification.** Why the doctrine can't be satisfied as-is in this scope. Technical, not preferential.
+5. **Plan to retire.** What condition or work will remove the need for the exception.
+6. **Linked ticket.** Issue tracker URL. No orphan exceptions.
+7. **Approver.** Maintainer signature. For cross-project exceptions (doctrine-breaking at the ecosystem level), approval routes through the PlausiDen-Meta maintainer.
+
+**Explicitly forbidden**:
+
+- Blanket exceptions ("we don't use this tenet").
+- Open-ended exceptions ("until we figure something out").
+- Exceptions broader than a single file/module/endpoint.
+- Exceptions to non-waivable tenets (see the tenet's `waivable` field).
+- Exceptions that amount to disagreement with a doctrine — that's a doctrine amendment proposal, not an exception.
+
+See [`EXCEPTIONS.md`](EXCEPTIONS.md) for the full template and the review protocol. **If the exception doesn't fit on one page with all fields filled, it's too broad.**
