@@ -46,60 +46,60 @@ Fields not yet known carry the placeholder `tbd` rather than being omitted.
 
 Status as of 2026-04-24. Update as repos are touched.
 
-| Repo | Label | Class | Header applied? |
-|---|---|---|---|
-| **PlausiDen-Meta** | meta-doctrine | ecosystem-priority-and-governance-gate | ✅ |
-| **PlausiDen-AVP-Doctrine** | meta-doctrine | validation-protocol-and-agent-standing-orders | ✅ |
-| **PlausiDen-Canon** | infrastructure | canonical-invariant-substrate | ✅ |
-| **PlausiDen-Audits** | infrastructure | enforcement-engine-and-audit-catalog | ✅ |
-| **PlausiDen-Tests** | infrastructure | testing-doctrine-and-harness | ✅ |
-| **PlausiDen-Obs** | infrastructure | observability-doctrine-and-substrate | ✅ |
-| **PlausiDen-Harvest** | infrastructure | upstream-harvest-protocol-and-tooling | ✅ |
-| PlausiDen-Engine | infrastructure | core-rust-substrate-for-plausiden-suite | ⏳ |
-| PlausiDen-AI | product | plausiden-ai-app-bundle | ⏳ |
-| PlausiDen-AI-dist | archive | distribution-artifacts | ⏳ |
-| PlausiDen-Sentinel | product | system-detection-and-monitoring-daemon | ⏳ |
-| PlausiDen-Atrium | product | plausiden-os-control-surface | ⏳ |
-| PlausiDen-Browser-Ext | product | browser-extension-for-the-suite | ⏳ |
-| PlausiDen-Desktop | product | desktop-application-shell | ⏳ |
-| PlausiDen-Android | product | android-application | ⏳ |
-| PlausiDen-OS-for-Mobile | product | mobile-os-distribution | ⏳ |
-| PlausiDen-MCP | infrastructure | model-context-protocol-server | ⏳ |
-| PlausiDen-Crawler | infrastructure | web-crawler-substrate | ⏳ |
-| PlausiDen-Firewall | infrastructure | network-firewall-substrate | ⏳ |
-| PlausiDen-AppGuard | product | application-permission-guard | ⏳ |
-| PlausiDen-Tidy | tool | filesystem-cleanup-utility | ⏳ |
-| PlausiDen-Purge | tool | secure-deletion-utility | ⏳ |
-| PlausiDen-Inject | tool | input-injection-utility | ⏳ |
-| PlausiDen-Suite | product | suite-installer-and-orchestrator | ⏳ |
-| PlausiDen-Shard | infrastructure | data-sharding-substrate | ⏳ |
-| PlausiDen-Swarm | infrastructure | mesh-swarm-substrate | ⏳ |
-| PlausiDen-USB | tool | usb-device-management-utility | ⏳ |
-| PlausiDen-Grants | reference | grants-application-tracking | ⏳ |
-| PlausiDen-Training-Data | data | training-corpora-for-plausiden-ai | ⏳ |
-| PlausiDen-Product-AppReclaim | product | app-reclaim-product | ⏳ |
-| PlausiDen-Product-BorderCloak | product | border-crossing-privacy-product | ⏳ |
-| PlausiDen-Product-ClassActionScout | product | class-action-discovery-product | ⏳ |
-| PlausiDen-Product-ComplianceKit | product | compliance-toolkit-product | ⏳ |
-| PlausiDen-Product-DataBrokerSlayer | product | data-broker-removal-product | ⏳ |
-| PlausiDen-Product-DeadSwitch | product | dead-mans-switch-product | ⏳ |
-| PlausiDen-Product-DisputeBot | product | dispute-automation-product | ⏳ |
-| PlausiDen-Product-Ideas | reference | product-ideas-and-roadmap-notes | ⏳ |
-| PlausiDen-Product-LawCopilot | product | legal-copilot-product | ⏳ |
-| PlausiDen-Product-LFIOracle | product | lfi-oracle-product | ⏳ |
-| PlausiDen-Product-MedicalCopilot | product | medical-copilot-product | ⏳ |
-| PlausiDen-Product-MoveOut | product | move-out-companion-product | ⏳ |
-| PlausiDen-Product-Paranoid | product | paranoid-mode-product | ⏳ |
-| PlausiDen-Product-RevengeCleaner | product | online-cleanup-product | ⏳ |
-| PlausiDen-Product-ReviewReal | product | review-authenticity-product | ⏳ |
-| PlausiDen-Product-ScamShield | product | scam-shield-product | ⏳ |
-| PlausiDen-Product-Scrapey | product | scraping-product | ⏳ |
-| PlausiDen-Product-Scrubs | product | data-scrub-product | ⏳ |
-| PlausiDen-Product-Senti | product | sentiment-analysis-product | ⏳ |
-| PlausiDen-Product-SilentPro | product | silent-pro-product | ⏳ |
-| PlausiDen-Product-SwarmVault | product | swarm-vault-product | ⏳ |
-| PlausiDen-Product-Ticketly | product | ticketing-product | ⏳ |
-| PlausiDen-Product-VoiceVault | product | voice-vault-product | ⏳ |
+| Repo | URL | Local path | Label | Class | Header applied? |
+|---|---|---|---|---|---|
+| **PlausiDen-Meta** | https://github.com/thepictishbeast/PlausiDen-Meta | `/home/user/Development/PlausiDen/PlausiDen-Meta` | meta-doctrine | ecosystem-priority-and-governance-gate | ✅ |
+| **PlausiDen-AVP-Doctrine** | https://github.com/thepictishbeast/PlausiDen-AVP-Doctrine | `/home/user/Development/PlausiDen/PlausiDen-AVP-Doctrine` | meta-doctrine | validation-protocol-and-agent-standing-orders | ✅ |
+| **PlausiDen-Canon** | https://github.com/thepictishbeast/PlausiDen-Canon | `/home/user/Development/PlausiDen/PlausiDen-Canon` | infrastructure | canonical-invariant-substrate | ✅ |
+| **PlausiDen-Audits** | https://github.com/thepictishbeast/PlausiDen-Audits | `/home/user/Development/PlausiDen/PlausiDen-Audits` | infrastructure | enforcement-engine-and-audit-catalog | ✅ |
+| **PlausiDen-Tests** | https://github.com/thepictishbeast/PlausiDen-Tests | `/home/user/Development/PlausiDen/PlausiDen-Tests` | infrastructure | testing-doctrine-and-harness | ✅ |
+| **PlausiDen-Obs** | https://github.com/thepictishbeast/PlausiDen-Obs | `/home/user/Development/PlausiDen/PlausiDen-Obs` | infrastructure | observability-doctrine-and-substrate | ✅ |
+| **PlausiDen-Harvest** | https://github.com/thepictishbeast/PlausiDen-Harvest | `/home/user/Development/PlausiDen/PlausiDen-Harvest` | infrastructure | upstream-harvest-protocol-and-tooling | ✅ |
+| PlausiDen-Engine | https://github.com/thepictishbeast/PlausiDen-Engine | `/home/user/Development/PlausiDen/PlausiDen-Engine` | infrastructure | core-rust-substrate-for-plausiden-suite | ⏳ |
+| PlausiDen-AI | https://github.com/thepictishbeast/PlausiDen-AI | `/home/user/Development/PlausiDen/PlausiDen-AI` | product | plausiden-ai-app-bundle | ⏳ |
+| PlausiDen-AI-dist | https://github.com/thepictishbeast/PlausiDen-AI-dist | `/home/user/Development/PlausiDen/PlausiDen-AI-dist` | archive | distribution-artifacts | ⏳ |
+| PlausiDen-Sentinel | https://github.com/thepictishbeast/PlausiDen-Sentinel | `/home/user/Development/PlausiDen/PlausiDen-Sentinel` | product | system-detection-and-monitoring-daemon | ⏳ |
+| PlausiDen-Atrium | https://github.com/thepictishbeast/PlausiDen-Atrium | `/home/user/Development/PlausiDen/PlausiDen-Atrium` | product | plausiden-os-control-surface | ⏳ |
+| PlausiDen-Browser-Ext | https://github.com/thepictishbeast/PlausiDen-Browser-Ext | `/home/user/Development/PlausiDen/PlausiDen-Browser-Ext` | product | browser-extension-for-the-suite | ⏳ |
+| PlausiDen-Desktop | https://github.com/thepictishbeast/PlausiDen-Desktop | `/home/user/Development/PlausiDen/PlausiDen-Desktop` | product | desktop-application-shell | ⏳ |
+| PlausiDen-Android | https://github.com/thepictishbeast/PlausiDen-Android | `/home/user/Development/PlausiDen/PlausiDen-Android` | product | android-application | ⏳ |
+| PlausiDen-OS-for-Mobile | https://github.com/thepictishbeast/PlausiDen-OS-for-Mobile | `/home/user/Development/PlausiDen/PlausiDen-OS-for-Mobile` | product | mobile-os-distribution | ⏳ |
+| PlausiDen-MCP | https://github.com/thepictishbeast/PlausiDen-MCP | `/home/user/Development/PlausiDen/PlausiDen-MCP` | infrastructure | model-context-protocol-server | ⏳ |
+| PlausiDen-Crawler | https://github.com/thepictishbeast/PlausiDen-Crawler | `/home/user/Development/PlausiDen/PlausiDen-Crawler` | infrastructure | web-crawler-substrate | ⏳ |
+| PlausiDen-Firewall | https://github.com/thepictishbeast/PlausiDen-Firewall | `/home/user/Development/PlausiDen/PlausiDen-Firewall` | infrastructure | network-firewall-substrate | ⏳ |
+| PlausiDen-AppGuard | https://github.com/thepictishbeast/PlausiDen-AppGuard | `/home/user/Development/PlausiDen/PlausiDen-AppGuard` | product | application-permission-guard | ⏳ |
+| PlausiDen-Tidy | https://github.com/thepictishbeast/PlausiDen-Tidy | `/home/user/Development/PlausiDen/PlausiDen-Tidy` | tool | filesystem-cleanup-utility | ⏳ |
+| PlausiDen-Purge | https://github.com/thepictishbeast/PlausiDen-Purge | `/home/user/Development/PlausiDen/PlausiDen-Purge` | tool | secure-deletion-utility | ⏳ |
+| PlausiDen-Inject | https://github.com/thepictishbeast/PlausiDen-Inject | `/home/user/Development/PlausiDen/PlausiDen-Inject` | tool | input-injection-utility | ⏳ |
+| PlausiDen-Suite | https://github.com/thepictishbeast/PlausiDen-Suite | `/home/user/Development/PlausiDen/PlausiDen-Suite` | product | suite-installer-and-orchestrator | ⏳ |
+| PlausiDen-Shard | https://github.com/thepictishbeast/PlausiDen-Shard | `/home/user/Development/PlausiDen/PlausiDen-Shard` | infrastructure | data-sharding-substrate | ⏳ |
+| PlausiDen-Swarm | https://github.com/thepictishbeast/PlausiDen-Swarm | `/home/user/Development/PlausiDen/PlausiDen-Swarm` | infrastructure | mesh-swarm-substrate | ⏳ |
+| PlausiDen-USB | https://github.com/thepictishbeast/PlausiDen-USB | `/home/user/Development/PlausiDen/PlausiDen-USB` | tool | usb-device-management-utility | ⏳ |
+| PlausiDen-Grants | https://github.com/thepictishbeast/PlausiDen-Grants | `/home/user/Development/PlausiDen/PlausiDen-Grants` | reference | grants-application-tracking | ⏳ |
+| PlausiDen-Training-Data | https://github.com/thepictishbeast/PlausiDen-Training-Data | `/home/user/Development/PlausiDen/PlausiDen-Training-Data` | data | training-corpora-for-plausiden-ai | ⏳ |
+| PlausiDen-Product-AppReclaim | https://github.com/thepictishbeast/PlausiDen-Product-AppReclaim | `/home/user/Development/PlausiDen/PlausiDen-Product-AppReclaim` | product | app-reclaim-product | ⏳ |
+| PlausiDen-Product-BorderCloak | https://github.com/thepictishbeast/PlausiDen-Product-BorderCloak | `/home/user/Development/PlausiDen/PlausiDen-Product-BorderCloak` | product | border-crossing-privacy-product | ⏳ |
+| PlausiDen-Product-ClassActionScout | https://github.com/thepictishbeast/PlausiDen-Product-ClassActionScout | `/home/user/Development/PlausiDen/PlausiDen-Product-ClassActionScout` | product | class-action-discovery-product | ⏳ |
+| PlausiDen-Product-ComplianceKit | https://github.com/thepictishbeast/PlausiDen-Product-ComplianceKit | `/home/user/Development/PlausiDen/PlausiDen-Product-ComplianceKit` | product | compliance-toolkit-product | ⏳ |
+| PlausiDen-Product-DataBrokerSlayer | https://github.com/thepictishbeast/PlausiDen-Product-DataBrokerSlayer | `/home/user/Development/PlausiDen/PlausiDen-Product-DataBrokerSlayer` | product | data-broker-removal-product | ⏳ |
+| PlausiDen-Product-DeadSwitch | https://github.com/thepictishbeast/PlausiDen-Product-DeadSwitch | `/home/user/Development/PlausiDen/PlausiDen-Product-DeadSwitch` | product | dead-mans-switch-product | ⏳ |
+| PlausiDen-Product-DisputeBot | https://github.com/thepictishbeast/PlausiDen-Product-DisputeBot | `/home/user/Development/PlausiDen/PlausiDen-Product-DisputeBot` | product | dispute-automation-product | ⏳ |
+| PlausiDen-Product-Ideas | https://github.com/thepictishbeast/PlausiDen-Product-Ideas | `/home/user/Development/PlausiDen/PlausiDen-Product-Ideas` | reference | product-ideas-and-roadmap-notes | ⏳ |
+| PlausiDen-Product-LawCopilot | https://github.com/thepictishbeast/PlausiDen-Product-LawCopilot | `/home/user/Development/PlausiDen/PlausiDen-Product-LawCopilot` | product | legal-copilot-product | ⏳ |
+| PlausiDen-Product-LFIOracle | https://github.com/thepictishbeast/PlausiDen-Product-LFIOracle | `/home/user/Development/PlausiDen/PlausiDen-Product-LFIOracle` | product | lfi-oracle-product | ⏳ |
+| PlausiDen-Product-MedicalCopilot | https://github.com/thepictishbeast/PlausiDen-Product-MedicalCopilot | `/home/user/Development/PlausiDen/PlausiDen-Product-MedicalCopilot` | product | medical-copilot-product | ⏳ |
+| PlausiDen-Product-MoveOut | https://github.com/thepictishbeast/PlausiDen-Product-MoveOut | `/home/user/Development/PlausiDen/PlausiDen-Product-MoveOut` | product | move-out-companion-product | ⏳ |
+| PlausiDen-Product-Paranoid | https://github.com/thepictishbeast/PlausiDen-Product-Paranoid | `/home/user/Development/PlausiDen/PlausiDen-Product-Paranoid` | product | paranoid-mode-product | ⏳ |
+| PlausiDen-Product-RevengeCleaner | https://github.com/thepictishbeast/PlausiDen-Product-RevengeCleaner | `/home/user/Development/PlausiDen/PlausiDen-Product-RevengeCleaner` | product | online-cleanup-product | ⏳ |
+| PlausiDen-Product-ReviewReal | https://github.com/thepictishbeast/PlausiDen-Product-ReviewReal | `/home/user/Development/PlausiDen/PlausiDen-Product-ReviewReal` | product | review-authenticity-product | ⏳ |
+| PlausiDen-Product-ScamShield | https://github.com/thepictishbeast/PlausiDen-Product-ScamShield | `/home/user/Development/PlausiDen/PlausiDen-Product-ScamShield` | product | scam-shield-product | ⏳ |
+| PlausiDen-Product-Scrapey | https://github.com/thepictishbeast/PlausiDen-Product-Scrapey | `/home/user/Development/PlausiDen/PlausiDen-Product-Scrapey` | product | scraping-product | ⏳ |
+| PlausiDen-Product-Scrubs | https://github.com/thepictishbeast/PlausiDen-Product-Scrubs | `/home/user/Development/PlausiDen/PlausiDen-Product-Scrubs` | product | data-scrub-product | ⏳ |
+| PlausiDen-Product-Senti | https://github.com/thepictishbeast/PlausiDen-Product-Senti | `/home/user/Development/PlausiDen/PlausiDen-Product-Senti` | product | sentiment-analysis-product | ⏳ |
+| PlausiDen-Product-SilentPro | https://github.com/thepictishbeast/PlausiDen-Product-SilentPro | `/home/user/Development/PlausiDen/PlausiDen-Product-SilentPro` | product | silent-pro-product | ⏳ |
+| PlausiDen-Product-SwarmVault | https://github.com/thepictishbeast/PlausiDen-Product-SwarmVault | `/home/user/Development/PlausiDen/PlausiDen-Product-SwarmVault` | product | swarm-vault-product | ⏳ |
+| PlausiDen-Product-Ticketly | https://github.com/thepictishbeast/PlausiDen-Product-Ticketly | `/home/user/Development/PlausiDen/PlausiDen-Product-Ticketly` | product | ticketing-product | ⏳ |
+| PlausiDen-Product-VoiceVault | https://github.com/thepictishbeast/PlausiDen-Product-VoiceVault | `/home/user/Development/PlausiDen/PlausiDen-Product-VoiceVault` | product | voice-vault-product | ⏳ |
 
 ## Crate / artifact location clarity
 
