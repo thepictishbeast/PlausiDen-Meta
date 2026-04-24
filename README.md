@@ -6,8 +6,7 @@
 # PlausiDen-Meta
 
 > The single written prior commitment that defeats in-the-moment pull toward
-> building the next shiny meta-piece instead of LFI / Sacred.Vote / Protection
-> Suite. Authoritative gate for any "should I build X" decision in the
+> building the next shiny meta-piece instead of object-level consumer projects
 > PlausiDen ecosystem.
 >
 > Sister repos: every PlausiDen-* repo references this one for its tier status.

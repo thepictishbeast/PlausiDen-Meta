@@ -32,7 +32,7 @@ Without an explicit floor, three failure modes:
 
 These look foundational but aren't axioms — they're derived from the floor + the principles:
 
-- The choice to ship `plausiden-obs` first (Tier 0). *Derived from*: time budget + LFI line count + observability leverage analysis.
+- The choice to ship `plausiden-obs` first (Tier 0). *Derived from*: time budget + Rust-line-count of typical consumers + observability leverage analysis.
 - The decision to write doctrine in TOML. *Derived from*: tooling consideration + readability + zero-dep parsing.
 - The MIT license choice. *Derived from*: FOSS-first stance + contributor friction minimization.
 

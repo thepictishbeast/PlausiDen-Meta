@@ -5,14 +5,30 @@ Standardized classification for every PlausiDen-namespace repo. Per the
 it's a specific-use tool or standalone project, it is treated and labeled by
 what it looks designed for.
 
-Each repo's `README.md` should carry an HTML-comment header at the top:
+Each repo's `README.md` should carry an HTML-comment header at the top.
+
+## Standardized header schema
+
+Every PlausiDen-namespace repo's `README.md` carries this block as the
+first content (above the `# Title`):
 
 ```html
-<!-- repo-label: <category> -->
-<!-- repo-class: <one-line description of role> -->
-<!-- repo-consumes: <comma-separated repo names; or "nothing" if root> -->
-<!-- repo-consumed-by: <comma-separated; or "leaf" if nothing depends on it> -->
+<!-- repo-label: <category> -->                          # required; one of the category enum
+<!-- repo-class: <one-line role description> -->         # required; the "what does it do" sentence
+<!-- repo-consumes: <comma-list or "nothing"> -->        # required; lists upstream PlausiDen repos
+<!-- repo-consumed-by: <comma-list or "leaf"> -->        # required; describes downstream scope generically
+<!-- repo-tier: <tier-id from PRIORITY.md> -->           # required; "meta" | "0" | "1" | "2" | "3" | "4" | "shelved"
+<!-- repo-doctrine-version: <semver> -->                 # if the repo carries a DOCTRINE.md, declare its version
+<!-- repo-engine-version: <semver> -->                   # if the repo ships executable engine code, declare its version
+<!-- repo-status: <experimental|production|deprecated|archive> -->   # required
+<!-- repo-avp-subject: <yes|no> -->                      # is this repo graded by AVP-Doctrine?
+<!-- repo-harvest-candidates: <yes|no> -->               # does this repo emit harvest.toml?
+<!-- repo-reference-impl-language: <language|n/a> -->    # if the repo ships a reference implementation; "n/a" for spec-only
+<!-- repo-target-stack-scope: <comma-list|any> -->       # which stacks the repo intentionally targets; "any" for stack-neutral
 ```
+
+Fields are normative — every PlausiDen repo eventually carries every line.
+Fields not yet known carry the placeholder `tbd` rather than being omitted.
 
 ## Label categories
 
@@ -84,6 +100,42 @@ Status as of 2026-04-24. Update as repos are touched.
 | PlausiDen-Product-SwarmVault | product | swarm-vault-product | ⏳ |
 | PlausiDen-Product-Ticketly | product | ticketing-product | ⏳ |
 | PlausiDen-Product-VoiceVault | product | voice-vault-product | ⏳ |
+
+## Crate / artifact location clarity
+
+Where a repo ships an executable artifact, the relationship between the
+**repo name** and the **artifact name** is declared here:
+
+| Repo | Ships artifact(s) | Artifact location |
+|---|---|---|
+| **PlausiDen-Obs** | Rust crate `plausiden-obs` | `crates/plausiden-obs/` |
+| **PlausiDen-Canon** | Rust binary `token-forge`, library crates `canon-core` + `canon-contract-types`, npm package `@plausiden/canon-react` | `crates/{token-forge, canon-core, canon-contract-types}/`, `adapters/react/` |
+| **PlausiDen-Tests** | Rust binary `contract-runner` | `crates/contract-runner/` |
+| **PlausiDen-Audits** | Python tools `audit_tool.py`, shell `smoke-check.sh`, future Rust engine `audits` | `scripts/`, future `crates/audits/` |
+| **PlausiDen-Harvest** | Rust binary `harvest-tool` (deferred until trigger) | `crates/harvest-tool/` |
+| **PlausiDen-AVP-Doctrine** | Spec-only (no executable artifact) | n/a |
+| **PlausiDen-Meta** | Spec-only (documentation + governance) | n/a |
+
+When a doctrine eventually graduates from "inside its origin repo" to "its
+own repo" (per the per-repo maturity model), the artifact moves with it
+and this table updates.
+
+## Known consumers (informational only)
+
+PlausiDen's design is independent of which consumers exist at any given
+time (per [`SCOPE.md`](SCOPE.md)). This list exists for harvest-discovery
+and impact-analysis; it does **not** justify adding consumer-specific
+content to any PlausiDen repo.
+
+| Consumer | Stack | Consumes (PlausiDen repos) | Status |
+|---|---|---|---|
+| `LFI` (the maintainer's neurosymbolic substrate) | Rust + React UI dashboard | Obs (planned), AVP-Doctrine (current), Canon (planned), Audits (planned), Tests (planned) | active |
+| `Sacred.Vote` (a correctness-critical voting consumer) | Rust + TypeScript | Canon (planned), Audits (planned), Obs (planned), AVP-Doctrine | active |
+| `Protection Suite` (a privacy-focused consumer family) | Rust + browser-extension TypeScript + Android Kotlin | Obs (planned), Audits (planned), AVP-Doctrine | active |
+
+This section is pure inverse-index. Adding a consumer here does **not**
+make that consumer's specific needs into PlausiDen requirements — see the
+independence test in [`SCOPE.md`](SCOPE.md).
 
 ## How to apply a header to a not-yet-applied repo
 

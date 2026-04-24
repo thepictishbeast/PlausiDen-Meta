@@ -6,7 +6,7 @@ Append-only record of tier-list and meta-layer decisions. Date order, newest fir
 
 ## 2026-04-24 — PlausiDen-Meta repo created; priority doc adopted as gate
 
-**Context**: A long design conversation produced an extensive blueprint covering Canon, Audits, Tests, Observability, Harvest, and a dozen-plus additional doctrines. Risk identified: the meta-layer becoming the work, competing with LFI for attention.
+**Context**: A long design conversation produced an extensive blueprint covering Canon, Audits, Tests, Observability, Harvest, and a dozen-plus additional doctrines. Risk identified: the meta-layer becoming the work, competing with object-level consumer work for attention.
 
 **Decision**: Create this repo with `PRIORITY.md` as the trigger-gated gate for any future "should I build X" decision. Adopt the 5 operating principles + 20% meta-layer time budget cap.
 
@@ -22,7 +22,7 @@ Append-only record of tier-list and meta-layer decisions. Date order, newest fir
 
 **Consequences**:
 - Canon, Tests, Observability, Harvest each ship as "early scaffolds awaiting trigger."
-- The Tier 0 commitment (`plausiden-obs`) is *de facto* satisfied by `PlausiDen-Obs/crates/plausiden-obs` — but this counts only when an LFI crate adopts it. Until then, scaffold status remains "experimental."
+- The Tier 0 commitment (`plausiden-obs`) is *de facto* satisfied by `PlausiDen-Obs/crates/plausiden-obs` — but this counts only when a real consumer crate adopts it. Until then, scaffold status remains "experimental."
 - This is a **one-time exception**, not a precedent. Future builds wait for triggers per the priority doc.
 
 ---

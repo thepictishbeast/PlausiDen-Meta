@@ -19,8 +19,8 @@ For a new project, the default repos to reference are:
 Per [`PRIORITY.md`](PRIORITY.md), most of the engines are not built out yet:
 
 - `PlausiDen-Obs` — **Tier 0** (early scaffold; awaiting first production consumer adoption to validate)
-- `PlausiDen-Canon` — **Tier 1** (early scaffold; awaiting Sacred.Vote UI work as concrete adoption trigger)
-- `PlausiDen-Audits` — **Tier 1** (existing repo with audit catalog; engine + rule packs build when LFI exceeds 100k lines OR third-repo duplicate-rule pain emerges)
+- `PlausiDen-Canon` — **Tier 1** (early scaffold; awaiting first production UI consumer)
+- `PlausiDen-Audits` — **Tier 1** (existing repo with audit catalog; engine + rule packs build when a Rust consumer exceeds 100k lines OR third-repo duplicate-rule pain emerges)
 - `PlausiDen-Tests` — **Tier 1** (early scaffold; harness builds when Canon ships ≥3 components AND a non-Canon consumer wants reuse)
 - `PlausiDen-AVP-Doctrine` — **shipped** (existing). Doctrine-grading upgrade is **Tier 2** (when three doctrine repos have amendments)
 
@@ -56,7 +56,7 @@ Each reference repo has a different verb. Match it:
 
 ## Language coverage
 
-For non-Rust projects (rare — TypeScript in Sacred.Vote migration, Kotlin eventually), `Obs` drops off until it has bindings for that language. The doctrine still applies (structured logging, Secret-equivalent type, audit sink) — the engine adapts.
+For non-Rust projects (until per-language adapters ship), `Obs` drops off until it has bindings for that language. The doctrine still applies (structured logging, Secret-equivalent type, audit sink) — the engine adapts.
 
 For language-specific guidance, see the corresponding `templates/<language>/` directory in each repo.
 

@@ -16,11 +16,11 @@ Highly-doctrined projects are high-ceiling, high-floor, slow-velocity. They're e
 
 ## 3. Object-level work always wins
 
-LFI is the product. Sacred.Vote is the deliverable. Protection Suite is the offering. Canon / Audits / Tests / Observability / AVP-Doctrine / Meta exist to make those better. **If at any point doctrine work competes with object-level work for attention, object-level work wins — always.**
+The object-level consumer projects (those building actual products) are the work. The PlausiDen meta-layer (Canon, Audits, Tests, Obs, Harvest, AVP-Doctrine, Meta) exists to make them better. **If at any point doctrine work competes with object-level work for attention, object-level work wins — always.**
 
 ## 4. Time-budget cap
 
-**20% of engineering time per week** is the maximum allocation to meta-infrastructure. If this week's budget is spent, the remainder goes to LFI / Sacred.Vote / Protection Suite. Tracked in [`DECISION_LOG.md`](DECISION_LOG.md) on a quarterly review.
+**20% of engineering time per week** is the maximum allocation to meta-infrastructure. If this week's budget is spent, the remainder goes to object-level consumer projects. Tracked in [`DECISION_LOG.md`](DECISION_LOG.md) on a quarterly review.
 
 ## 5. One-consumer-in-production rule
 
@@ -32,7 +32,7 @@ Building ahead of a trigger declared in [`PRIORITY.md`](PRIORITY.md) is itself a
 
 ## 7. Determinism over plausibility for enforcement
 
-Hard invariants (touch targets, contrast, raw-value detection, type-level contracts) are checked deterministically. AI may draft contracts, explain violations, propose fix codemods — but never autonomously mutates a baseline, waives a violation, or runs as a CI gate. This preserves PSA (no vendor hostage) and makes eventual LFI cutover a swap, not a rebuild.
+Hard invariants (touch targets, contrast, raw-value detection, type-level contracts) are checked deterministically. AI may draft contracts, explain violations, propose fix codemods — but never autonomously mutates a baseline, waives a violation, or runs as a CI gate. This preserves PSA (no vendor hostage) and makes eventual swap to a sovereign engine a swap, not a rebuild.
 
 ## 8. Local-first defaults
 
@@ -40,8 +40,8 @@ Every PlausiDen tool works with zero external dependencies by default. Remote ag
 
 ## 9. The complexity cliff is real
 
-The full design surface across all doctrine repos plus Canon plus the LFI ecosystem plus Protection Suite plus Sacred.Vote is **18–24 months of focused work for one person if everything else stops**. Everything else is not stopping. **The architecture is correct. Building all of it serially is not survivable.** This document is the discipline against that.
+The full design surface across all doctrine repos plus Canon plus the object-level consumer projects is **18–24 months of focused work for one person if everything else stops**. Everything else is not stopping. **The architecture is correct. Building all of it serially is not survivable.** This document is the discipline against that.
 
 ## 10. Counter-mechanism: meta-layer additions require demonstrated object-level pain
 
-Every doctrine tenet, every harvest candidate type, every AVP tier must cite the **concrete failure it prevents** — preferably an incident that already happened. Speculative generality is the failure mode that turns infrastructure into a beautiful cathedral that competes with LFI for attention. **Citation requirement is enforced by the doctrine-amendment process** (see [`GOVERNANCE.md`](GOVERNANCE.md)).
+Every doctrine tenet, every harvest candidate type, every AVP tier must cite the **concrete failure it prevents** — preferably an incident that already happened. Speculative generality is the failure mode that turns infrastructure into a beautiful cathedral that competes with object-level consumer work for attention. **Citation requirement is enforced by the doctrine-amendment process** (see [`GOVERNANCE.md`](GOVERNANCE.md)).

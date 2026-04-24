@@ -7,7 +7,7 @@
 ## Operating principles (non-negotiable)
 
 1. **Meta-infrastructure is net-negative until proven otherwise.** Every built piece must cite the object-level pain it eliminated within 90 days of shipping. Unjustified pieces get shelved.
-2. **Meta-layer time budget: 20% of engineering time, weekly.** If this week's meta budget is spent, remaining time goes to LFI, Sacred.Vote, or Protection Suite. Full stop.
+2. **Meta-layer time budget: 20% of engineering time, weekly.** If this week's meta budget is spent, remaining time goes to object-level consumer projects. Full stop.
 3. **One consumer in production before generalization.** No PlausiDen-namespace piece graduates from experimental until at least one real project depends on it in anger.
 4. **Triggers fire; you don't anticipate them.** Building ahead of a trigger is a doctrine violation against this document itself.
 5. **PlausiDen is not for experimental spikes.** Spikes happen in unlabeled scratch repos. Only doctrine-ready work enters the PlausiDen namespace.
@@ -19,9 +19,9 @@
 ### `plausiden-obs` crate (Observability substrate, minimal)
 
 - **What**: Thin Rust crate wrapping `tracing` + `tracing-subscriber`. Ships: JSON formatter with opinionated field taxonomy, `Secret<T>` wrapper type (no Display/Debug/Serialize), audit-log sink separate from debug-log sink, test utilities for asserting log structure.
-- **Trigger (already fired)**: ~77k lines of Rust across LFI and Protection Suite with ad-hoc logging. Debugging cost compounds weekly.
+- **Trigger (already fired)**: ~a Rust-heavy consumer project with ad-hoc logging. Debugging cost compounds weekly.
 - **Scope cap**: One weekend. If it's taking longer, it's over-scoped.
-- **Success criterion**: LFI and at least one Protection Suite crate adopt it within 30 days and report reduced debug friction.
+- **Success criterion**: at least two consumer crates adopt it within 30 days and report reduced debug friction.
 - **Doctrine at this stage**: Inline comments + a `DOCTRINE.md` stub. No separate doctrine repo yet.
 - **Non-goals**: Metrics, traces across services, OTel export, remote aggregation. All deferred.
 - **Status (2026-04-24)**: Scaffold lives at [`PlausiDen-Obs`](https://github.com/thepictishbeast/PlausiDen-Obs) → `crates/plausiden-obs`. Awaiting consumer adoption to validate.
@@ -31,15 +31,15 @@
 ## Tier 1 — Build when specific triggers fire
 
 ### PlausiDen-Audits engine (static rules only)
-- **Trigger**: Any one of — (a) LFI exceeds 100k lines of Rust, (b) writing the same pre-commit check in three repos, (c) Sacred.Vote approaches its first audited release and needs attestation artifacts.
+- **Trigger**: Any one of — (a) a Rust consumer exceeds 100k lines, (b) writing the same pre-commit check in three repos, (c) a consumer project approaches its first audited release and needs attestation artifacts.
 - **Initial scope**: Tree-sitter query engine, baseline ledger, three rules end-to-end (raw-string detection, `println!`/`console.log` detection, `unwrap()` in public paths), SARIF output, one CI adapter (GitHub Actions).
 - **Excludes**: Runtime rules, codemods, plugin system, registry, LSP. All deferred.
 
 ### PlausiDen-Canon (UI tokens + React primitives)
-- **Trigger**: Sacred.Vote UI work resumes in earnest OR a second consumer needs shared UI primitives.
+- **Trigger**: the first production UI consumer commits to adoption (any project, internal or external).
 - **Initial scope**: `tokens.toml` + `token-forge` CLI + React target with `Box`, `Stack`, `Text`, `Button`, `TextField`. ESLint custom rule banning raw `<button>`/`<input>`.
 - **Excludes**: Kotlin/iced/egui targets, full contracts YAML, theming overlays, multi-domain expansion. All deferred.
-- **Status (2026-04-24)**: **Built ahead of trigger.** Full scaffold exists — tokens, contracts for 7 components, React target with 4 primitives + Button. Pending Sacred.Vote adoption to validate or trim.
+- **Status (2026-04-24)**: **Built ahead of trigger.** Full scaffold exists — tokens, contracts for 7 components, React adapter with 4 primitives + Button. Pending first production UI consumer adoption to validate or trim.
 
 ### PlausiDen-Tests harness (contract-parameterized runner)
 - **Trigger**: Canon ships ≥3 components with behavior contracts AND at least one non-Canon consumer wants to reuse the same contract tests.
@@ -60,7 +60,7 @@
 | Canon: contracts layer (full enforcement) | Canon has 5+ components AND ≥2 targets need parity enforcement |
 | AVP-Doctrine upgrade to meta-doctrine | Three doctrine repos exist with amendments |
 | Audits: runtime rules + autofix codemods | Static rules in production across 3+ consumers AND a runtime-only violation has caused incidents |
-| Security Doctrine | Sacred.Vote first external security audit OR LFI confidentiality kernel v1.0 |
+| Security Doctrine | the first consumer requires external security audit OR ships a confidentiality-kernel-grade artifact |
 | Release Doctrine | About to cut v1.0 of any PlausiDen-namespace artifact AND have hit a versioning mishap |
 
 ---
@@ -80,9 +80,9 @@ All have design sketches in the blueprint conversations. None get built preempti
 - **Docs site (`plausiden.dev`)** — Trigger: external adoption goal AND 3+ doctrine repos with published amendments
 - **Adoption dashboard** — Trigger: 5+ consumer repos exist AND drift is visible without tooling
 - **Release Artifact / Dependency / Documentation / API Design / Data doctrines** — Trigger per-doctrine: a concrete cross-repo incident the doctrine would have prevented
-- **Accessibility / i18n doctrines** — Trigger: first consumer with concrete a11y/i18n requirement (Sacred.Vote likely)
-- **Plausible Deniability / PSA / Anti-Fingerprinting doctrines** — Trigger: Protection Suite v1.0 release AND cross-component consistency needed
-- **Corpus Hygiene Doctrine** — Trigger: LFI ingests production corpus data (likely Tier 2 within 6 months)
+- **Accessibility / i18n doctrines** — Trigger: first consumer with concrete a11y/i18n requirement (likely candidates: any consumer with end-user UI)
+- **Plausible Deniability / PSA / Anti-Fingerprinting doctrines** — Trigger: a privacy-focused consumer reaches v1.0 AND cross-component consistency is required
+- **Corpus Hygiene Doctrine** — Trigger: the first consumer ingests production corpus data
 
 ---
 
@@ -110,12 +110,12 @@ Multi-tenant doctrine inheritance, supply-chain attestation (SLSA, SBOM, signed 
 
 | Date | Decision | Rationale |
 |---|---|---|
-| 2026-04-24 | Tier 0 = `plausiden-obs` only | Highest leverage per LFI line count; smallest scope; pays back from line one |
-| 2026-04-24 | Canon React target deferred to Tier 1 | No active UI consumer this week; Sacred.Vote UI work not current focus |
+| 2026-04-24 | Tier 0 = `plausiden-obs` only | Highest leverage per Rust LoC of typical consumer; smallest scope; pays back from line one |
+| 2026-04-24 | Canon React target deferred to Tier 1 | No active UI consumer this week; deferred until any production UI consumer adopts |
 | 2026-04-24 | Harvest tooling deferred to Tier 3 | Insufficient consumer count; manual PRs sufficient |
 | 2026-04-24 | All non-core doctrines shelved to Tier 2–4 | No concrete incident-driven demand yet |
 | 2026-04-24 | Built-ahead-of-trigger: Canon/Tests/Observability/Harvest scaffolds shipped before this priority doc was committed | Acknowledged in respective READMEs as "early scaffolds awaiting trigger." Not a precedent — future builds wait for triggers. |
 
 ---
 
-**Next concrete action**: spin up `plausiden-obs` as a Cargo crate this weekend, wire it into one LFI crate and one Protection Suite crate, measure debug-friction reduction over 30 days. That's the Tier 0 commitment; everything else waits.
+**Next concrete action**: spin up `plausiden-obs` as a Cargo crate this weekend, wire it into two consumer crates, measure debug-friction reduction over 30 days. That's the Tier 0 commitment; everything else waits.
