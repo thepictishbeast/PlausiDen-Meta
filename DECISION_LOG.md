@@ -4,6 +4,33 @@ Append-only record of tier-list and meta-layer decisions. Date order, newest fir
 
 ---
 
+## 2026-04-24 (latest) — Anti-duplication + CONTRIBUTOR_CHECKLIST + CHANGELOG.toml stubs
+
+**Context**: Many independent Claude Code sessions, AI agents, and humans will contribute to PlausiDen repos without seeing each other's work. The maintainer flagged having many vastly different consumer projects all referencing these repos, so duplication / redundancy / over-specificity hurts all of them. Default failure mode without discipline = fragmentation.
+
+**Decision**:
+1. `OPERATING_PRINCIPLES.md` §13 — no duplication, no redundancy, no over-specificity. Six rules: search before adding, extend don't fork, generalize before committing, reference don't duplicate doctrine clauses, cross-repo via Meta, per-consumer specifics stay in consumer's repo.
+2. `CONTRIBUTOR_CHECKLIST.md` — 7-step workflow every contributor follows. PR descriptions must report search results + independence-test result, or PRs get closed.
+3. `CHANGELOG.toml` stubs in all 7 doctrine repos. Required by §11 staleness gate.
+4. `CONTRIBUTING.md` added to repos that didn't have one (Meta, Obs, Harvest); each redirects to CONTRIBUTOR_CHECKLIST.md plus repo-specific "what lives here" guidance.
+
+**Consequences**: Mechanical anti-fragmentation. Future contributors have a written discipline. Trade-off: more PR friction, accepted per OPERATING_PRINCIPLES §3.
+
+---
+
+## 2026-04-24 — Doctrine-is-living principle (§11) + EXCEPTIONS.md protocol (§12)
+
+**Context**: The doctrine-as-published framing left two things implicit that consumers would miss: doctrines evolve so consumers must check regularly, and when a consumer can't comply the response must be a narrow formal exception not silent deviation.
+
+**Decision**:
+1. `OPERATING_PRINCIPLES.md` §11 — doctrines are living; consumers check on a declared cadence (monthly minimum, more during active work). `CHANGELOG.toml` is canonical update signal; CI staleness gates warn at 30d / fail at 90d.
+2. `OPERATING_PRINCIPLES.md` §12 — exceptions must be specific, scope-limited, narrow, time-bounded.
+3. `EXCEPTIONS.md` — full protocol + template + extension rules + cross-project escalation.
+
+**Consequences**: Concrete cadence expectation; deviation is tracked + reviewed + expiring; every exception doubles as evidence for amendment.
+
+---
+
 ## 2026-04-24 — PlausiDen-Meta repo created; priority doc adopted as gate
 
 **Context**: A long design conversation produced an extensive blueprint covering Canon, Audits, Tests, Observability, Harvest, and a dozen-plus additional doctrines. Risk identified: the meta-layer becoming the work, competing with object-level consumer work for attention.
