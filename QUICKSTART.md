@@ -16,7 +16,7 @@
 
 ## Standard new-project preamble (paste this)
 
-> This project is part of the PlausiDen ecosystem. See **PlausiDen-Meta** for ecosystem-wide principles, governance, and priority triggers. For its technical dependencies:
+> This project is part of the PlausiDen ecosystem. See **PlausiDen-Meta** for ecosystem-wide principles, governance, and priority triggers — and **[`PlausiDen-Meta/STACK_DOCTRINE.md`](https://github.com/thepictishbeast/PlausiDen-Meta/blob/main/STACK_DOCTRINE.md)** for which language/tool to choose per domain before you start. For its technical dependencies:
 >
 > - **PlausiDen-Obs** — use for structured logging, tracing, and secret handling (mandatory for Rust).
 > - **PlausiDen-Canon** — conform to tokens and (eventually) UI primitives and contracts.

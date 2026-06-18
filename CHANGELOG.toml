@@ -12,8 +12,8 @@
 
 [meta]
 repo                = "PlausiDen-Meta"
-last_amendment_date = "2026-04-24T14:00:59Z"
-amendment_count     = 0
+last_amendment_date = "2026-06-18T17:15:00Z"
+amendment_count     = 1
 
 # === Entries ===
 # Format:
@@ -27,3 +27,13 @@ amendment_count     = 0
 #   affected_tenets = ["<tenet-id>", ...]   # for doctrine entries
 #   amendment_pr    = "<URL>"               # for amendment entries
 #   notes           = "<optional>"
+
+[[entry]]
+id              = "meta-doctrine-1.1.0"
+kind            = "doctrine"
+version_from    = "1.0.0"
+version_to      = "1.1.0"
+date            = "2026-06-18T17:15:00Z"
+summary         = "Add STACK_DOCTRINE.md (The Sovereign Polyglot Stack) — best-language-per-domain reference + language-selection doctrine; the which-tool leg next to SECURITY_BASELINE and SUPERSOCIETY_BASELINE."
+affected_tenets = ["stack-doctrine", "language-selection", "governance-as-selection-axis"]
+notes           = "Pre-existing standalone doc (2026.05-r2) imported, expanded to r3 with layer index, how-to-use, PlausiDen ecosystem mapping, and doctrine cross-refs; wired into README, ECOSYSTEM_GUIDE (Language coverage), QUICKSTART preamble. Cross-linked with PlausiDen-AI/docs/SUPERSOCIETY_STACK.md. Advisory, not a gate."

@@ -4,6 +4,20 @@ Append-only record of tier-list and meta-layer decisions. Date order, newest fir
 
 ---
 
+## 2026-06-18 — Adopt STACK_DOCTRINE.md (The Sovereign Polyglot Stack) as ecosystem language-selection doctrine
+
+**Context**: A standalone "best-language-per-domain" reference (the Sovereign Polyglot Stack, 2026.05-r2) existed outside the ecosystem and was **not reachable** when an AI was pointed at PlausiDen-Meta — not in Meta, not in any of the six reference repos, and its distinctive content appeared nowhere in the namespace. An AI choosing a language for a new PlausiDen repo had the *what-guarantees* doctrine (SECURITY_BASELINE, SUPERSOCIETY_BASELINE) but no *which-tool* doctrine. The one near-sibling, `PlausiDen-AI/docs/SUPERSOCIETY_STACK.md`, was a product-specific plan buried three hops down via the repo registry.
+
+**Decision**: Import the doc into Meta as `STACK_DOCTRINE.md`, expand it to r3 (layer index, how-to-use, a PlausiDen ecosystem mapping of which repos instantiate each choice, and doctrine cross-refs), and wire it into the AI entry path: README "What this repo holds" table, ECOSYSTEM_GUIDE "Language coverage", and the QUICKSTART standard preamble. Cross-link it with `PlausiDen-AI/docs/SUPERSOCIETY_STACK.md`. Positioned as the **third leg** of the consumer floor: SECURITY (what guarantees) + SUPERSOCIETY (sovereignty demands) + STACK (which tool). **Advisory, not a gate** — deviations must price the capture risk and record why.
+
+**Consequences**:
+- An AI pointed at Meta now encounters the language-selection doctrine on the standard read path.
+- Layer choices are checkable against real repos (the ecosystem mapping), not just asserted.
+- Reviewed quarterly with the rest of the doc; tracked in `CHANGELOG.toml` (meta-doctrine 1.0.0 → 1.1.0).
+- Governance/capture-risk becomes an explicit, first-class language-selection axis at the ecosystem level.
+
+---
+
 ## 2026-04-24 (latest) — Anti-duplication + CONTRIBUTOR_CHECKLIST + CHANGELOG.toml stubs
 
 **Context**: Many independent Claude Code sessions, AI agents, and humans will contribute to PlausiDen repos without seeing each other's work. The maintainer flagged having many vastly different consumer projects all referencing these repos, so duplication / redundancy / over-specificity hurts all of them. Default failure mode without discipline = fragmentation.

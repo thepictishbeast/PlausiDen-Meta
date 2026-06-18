@@ -56,9 +56,11 @@ Each reference repo has a different verb. Match it:
 
 ## Language coverage
 
+**Which language to choose, per domain → [`STACK_DOCTRINE.md`](STACK_DOCTRINE.md)** (the Sovereign Polyglot Stack). Before picking a language for a new repo or layer, consult it: it gives the best-tool-per-domain reference, the governance/capture-risk flag for each choice, and a map of which existing PlausiDen repos already instantiate each choice. The default spine is Rust; captive-platform languages (Kotlin/Swift/TS) are kept as thin shells over a Rust core.
+
 For non-Rust projects (until per-language adapters ship), `Obs` drops off until it has bindings for that language. The doctrine still applies (structured logging, Secret-equivalent type, audit sink) — the engine adapts.
 
-For language-specific guidance, see the corresponding `templates/<language>/` directory in each repo.
+For *how to write* each language well once chosen, see [`PlausiDen-AVP-Doctrine`](https://github.com/thepictishbeast/PlausiDen-AVP-Doctrine) `gates/<language>.md` and the corresponding `templates/<language>/` directory in each repo.
 
 ## When NOT to enter the PlausiDen namespace
 

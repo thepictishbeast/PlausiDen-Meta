@@ -41,6 +41,7 @@
 | [`OPERATING_PRINCIPLES.md`](OPERATING_PRINCIPLES.md) | Non-negotiable operating principles (time budget, one-consumer-in-production, doctrines-are-living, exceptions-must-be-narrow, etc.). |
 | [`SECURITY_BASELINE.md`](SECURITY_BASELINE.md) | 16 stack-neutral security demands of every consumer. |
 | [`SUPERSOCIETY_BASELINE.md`](SUPERSOCIETY_BASELINE.md) | 15 sovereignty / longevity / inclusion demands of every consumer. |
+| [`STACK_DOCTRINE.md`](STACK_DOCTRINE.md) | The Sovereign Polyglot Stack — best-language-per-domain reference + language-selection doctrine. The *which-tool* leg, next to the security and supersociety baselines. |
 | [`GOVERNANCE.md`](GOVERNANCE.md) | How doctrine itself changes (ADR amendments, cross-doctrine precedence, sunset clauses, comment periods). |
 | [`AXIOM_FLOOR.md`](AXIOM_FLOOR.md) | Where the recursive self-application stops. The asserted-by-fiat bottom. |
 | [`ECOSYSTEM_GUIDE.md`](ECOSYSTEM_GUIDE.md) | Per-repo verbs for new consumers (use / conform to / run / adopt / be graded by). |
