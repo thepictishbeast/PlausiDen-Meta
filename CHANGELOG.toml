@@ -12,8 +12,8 @@
 
 [meta]
 repo                = "PlausiDen-Meta"
-last_amendment_date = "2026-06-18T17:15:00Z"
-amendment_count     = 1
+last_amendment_date = "2026-06-18T18:05:00Z"
+amendment_count     = 2
 
 # === Entries ===
 # Format:
@@ -27,6 +27,16 @@ amendment_count     = 1
 #   affected_tenets = ["<tenet-id>", ...]   # for doctrine entries
 #   amendment_pr    = "<URL>"               # for amendment entries
 #   notes           = "<optional>"
+
+[[entry]]
+id              = "meta-doctrine-1.2.0"
+kind            = "doctrine"
+version_from    = "1.1.0"
+version_to      = "1.2.0"
+date            = "2026-06-18T18:05:00Z"
+summary         = "Expand STACK_DOCTRINE.md to r4: per-layer Primary-vs-Fallback rationale + migration paths (in collapsibles); new How-to-choose decision heuristic, interop-spine, and anti-patterns sections; new Layer 16 (cross-cutting infrastructure: serialization/messaging/search/caching/observability/API-contracts). All r3 picks/flags/stances preserved."
+affected_tenets = ["stack-doctrine", "language-selection"]
+notes           = "Adversarially integrity-checked before commit: invented version/date specifics stripped (Mojo/OpenTofu/Redis/ES/Grafana years + versions); protobuf corrected to BSD-3-Clause; all 27 internal anchors resolve; <details> balanced. Flagged license-class claims (RabbitMQ/Redpanda/Dragonfly/Meilisearch/Lean/CBOR) stated qualitatively — re-verify quarterly."
 
 [[entry]]
 id              = "meta-doctrine-1.1.0"
