@@ -31,6 +31,12 @@
 > PlausiDen ecosystem.
 >
 > Sister repos: every PlausiDen-* repo references this one for its tier status.
+>
+> **Public front door:** what PlausiDen *is* — services, goals, projects,
+> capabilities, track record — lives in
+> [`PlausiDen-About`](https://github.com/thepictishbeast/PlausiDen-About)
+> (rendered by [plausiden.com](https://plausiden.com)). This repo stays
+> internal-governance-only.
 
 ## What this repo holds
 
