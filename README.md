@@ -60,6 +60,18 @@
 
 Every file in this repo is subject to doctrine amendments per [`GOVERNANCE.md`](GOVERNANCE.md). **Consumers must check in regularly** — at minimum monthly, more often during active work on a doctrine-adopting project. Staleness is tracked via `CHANGELOG.toml` at each doctrine repo's root; CI warns at 30 days behind and fails at 90 days behind. See [`OPERATING_PRINCIPLES.md`](OPERATING_PRINCIPLES.md) §11 + [`EXCEPTIONS.md`](EXCEPTIONS.md).
 
+## Multi-session collaboration
+
+Large work runs across many parallel Claude/agent sessions — on prime and on
+other devices. They coordinate over **agent-mesh**: a private channel + shared
+artifact store governed by `MESH-PROTOCOL`. Each session is a node (`role@host`);
+they exchange one-file-per-message over a fast local bus and a durable
+cross-device git bus, with an additive extension rule so the protocol grows
+without breaking older nodes, and per-repo holder boundaries so no two sessions
+fight over the same tree. Session artifacts (handoffs, state) live in a shared
+internal store, never in project repos. The doctrine here defines *what* gets
+built; the mesh defines *how the sessions coordinate* while building it.
+
 ## What this repo is not
 
 - Not a roadmap. Roadmaps imply sequencing; the priority list is trigger-gated.
